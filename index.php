@@ -1,3 +1,1 @@
-<?php require_once('/Lib/Bootstrap.php');
-
-?>
+<?php require_once('/Lib/Bootstrap.php');?>
