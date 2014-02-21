@@ -1,7 +1,16 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * This is a base class for extending all the controllers
+ * 
+ * PHP 5
+ * 
+ * @package  php-command
+ * @category Architecture
+ * @author   Priyank Saini<priyanksaini2010@gmail.cmom>
  */
+
+class Controller
+{
+    
+}
 ?>
