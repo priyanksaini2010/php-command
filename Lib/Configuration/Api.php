@@ -81,15 +81,14 @@ class Api
         $client->setHeader($this->content, $this->domainConfig->format);
         $client->setUserAgent();
         $client->setUrl($this->url);
-//        pr($this->url);
-//        die;
-//        $response = $client->doInstReqBit($this->url, $this->content);
-//        $response = $client->doInstRequest($this->url, $this->content);
-        $response =  $this->doRequest($client);
-//        $reponse =  $client->getCurlInfo();
-        var_dump($response);
-        pr($response);
-        die;
+        $res = $this->doRequest($client);
+        if (isset($res['state']) ||  isset($res['status'])){
+            echo "Issue Submited";
+        } else if(isset($res['message'])){
+            echo $res['message'];
+        }else {
+            echo "Issue submission failed";
+        }
     }
     
     /**
@@ -125,8 +124,18 @@ class Api
         $this->url = $this->domainConfig->url->start.$this->credentials['username']."/".$this->domainDetail['repo']."/".$this->domainConfig->url->end;
     }
     
+    /**
+     * Make API call For Creating new Issue
+     * 
+     * @param HttpClient $client
+     * 
+     * @return json Response from API Call
+     */
     protected function doRequest(HttpClient $client) 
     {
-        return $client->doRequest();
+       return $client->doRequest();
     }
+    
+    
+    
 }

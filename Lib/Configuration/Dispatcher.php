@@ -29,7 +29,6 @@ class Dispatcher
    {
        try {
            $this->args  = ConfigFactory::resolveCredential();
-           
            $this->base = new Api(array('username'=>$this->args['username'],'password'=>$this->args['password']), 
                                  array('title'=>$this->args['title'],'content' => $this->args['content']), 
                                  array('domain'=>$this->args['domain'], 'repo'=>$this->args['repo']));
