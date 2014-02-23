@@ -5,22 +5,9 @@
  * PHP version 5.3.8
  *
  * @category Configuration
- * @package  Submit Issue
+ * @package  php-command
  * @author   Priyank Saini <priyanksaini2010@gmail.com>
- * @license  http://groupon.com/ HR Licence
- * @link     http://groupon.com/
- */
-
-/**
- * Common Nuts and Bolts.Contains Application configuration variables,Parsed Via Config INI And other usefull functions
- * 
- * PHP version 5.3.8
- *
- * @category Configuration
- * @package  Submit Issue
- * @author   Priyank Saini <priyanksaini2010@gmail.com>
- * @license  http://groupon.com/ HR Licence
- * @link     http://groupon.com/
+ * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class ConfigFactory
 {
@@ -185,17 +172,114 @@ class ConfigFactory
     public static function resolveCredential()
     {
         if (isset($_SERVER['argv'][1]) && $_SERVER['argv'][1]!='') {
-            $array['username'] = isset($_SERVER['argv'][2]) ?$_SERVER['argv'][2] : '';
-            $array['password'] = isset($_SERVER['argv'][4]) ?$_SERVER['argv'][4] : '';
-            $array['domain'] = isset($_SERVER['argv'][6]) ?$_SERVER['argv'][6] : '';
-            $array['repo'] = isset($_SERVER['argv'][8]) ?$_SERVER['argv'][8] : '';
-            $array['title'] = isset($_SERVER['argv'][10]) ?$_SERVER['argv'][10] : '';
-            $array['content'] = isset($_SERVER['argv'][11]) ?$_SERVER['argv'][11] : '';
+            $args['username'] = isset($_SERVER['argv'][2]) ?$_SERVER['argv'][2] : '';
+            $args['password'] = isset($_SERVER['argv'][4]) ?$_SERVER['argv'][4] : '';
+            $args['domain'] = isset($_SERVER['argv'][6]) ?$_SERVER['argv'][6] : '';
+            $args['repo'] = isset($_SERVER['argv'][8]) ?$_SERVER['argv'][8] : '';
+            $args['title'] = isset($_SERVER['argv'][10]) ?$_SERVER['argv'][10] : '';
+            $args['content'] = isset($_SERVER['argv'][11]) ?$_SERVER['argv'][11] : '';
+            if (self::validateCredentials($args)) {
+                return $args;
+            }
         } else {
             $error = new ErrorHandler;
             $error->badRequest();
         }
-        return $array;
+    }
+    
+    /**
+     * Method will Validate domain namd and other credentials Supplied
+     * 
+     * @param array $params Parameters sent from bash
+     * 
+     * @access Protected
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
+     * @return boolesn Return true if all parameters are passed and valid
+     */
+    protected function validateCredentials($args)
+    {
+        if (self::checkDomain($args['domain']) && self::checkAuth($args['username'], $args['password'])&& self::checkRepo($args['repo']) && self::checkContent($args['title'], $args['content']) ) {
+            return true;
+        }
+    }
+    
+    /**
+     * Check If domain suplied and is valid or not
+     * 
+     * @param string $domain
+     * 
+     * @access protected
+     * @author Priyank Saini<priyanksaini2010@gmail.com>
+     * @throws Bad Domain Exception
+     * @return boolean
+     */
+    protected static function checkDomain($domain)
+    {
+        $registeredDomains = array_keys((array)self::getConfigVar('domain'));
+        if ($domain != '' && in_array($domain, $registeredDomains)) {
+            return true;
+        }
+        $error = new ErrorHandler;
+        $error->badDomain();
+    }
+    
+    /**
+     * Check If domain suplied and is valid or not
+     * 
+     * @param type $username Username For API Authorization
+     * @param type $password Password For API Authorization
+     * 
+     * @access protected
+     * @author Priyank Saini<priyanksaini2010@gmail.com>
+     * @throws Bad Auth Exception
+     * @return boolean
+     */
+    protected static function checkAuth($username, $password)
+    {
+        if ($username != '' && $password != '') {
+            return true;
+        }
+        $error = new ErrorHandler;
+        $error->badAuth();
+    }
+    
+    /**
+     * Check If repo name suplied and is valid or not
+     * 
+     * @param string $repo repo to create issue
+     * 
+     * @access protected
+     * @author Priyank Saini<priyanksaini2010@gmail.com>
+     * @throws Bad Auth Exception
+     * @return boolean
+     */
+    protected static function checkRepo($repo)
+    {
+        if ($repo != '') {
+            return true;
+        }
+        $error = new ErrorHandler;
+        $error->badRepo();
+    }
+    
+    /**
+     * Check If title and body of Issue is provided
+     * 
+     * @param string $title Title Of Issue
+     * @param string $body  Body Of Issue
+     * 
+     * @access protected
+     * @author Priyank Saini<priyanksaini2010@gmail.com>
+     * @throws Bad Content Exception
+     * @return boolean
+     */
+    protected static function checkContent($title, $body)
+    {
+        if ($title != '' && $body != '') {
+            return true;
+        }
+        $error = new ErrorHandler;
+        $error->badContent();
     }
     
 }

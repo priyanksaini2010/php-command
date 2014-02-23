@@ -1,12 +1,13 @@
 <?php
 /**
- * This is a base class for Dispatching Http Client and Invooking Api
+ * This is a base class for Dispatching Http Client and Invoking Api
  * 
  * PHP 5
  * 
  * @package  php-command
  * @category Architecture
  * @author   Priyank Saini <priyanksaini2010@gmail.com>
+ * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class Dispatcher
 {

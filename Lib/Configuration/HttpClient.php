@@ -1,21 +1,29 @@
 <?php
 /**
- * This is a class for Making Api Call And Disptching response
+ * This is a class for preparing curl for making request and geting response
  * 
  * PHP 5
  * 
- * @package  Submit Issue
+ * @package  php-command
+ * @category API
  * @author   Priyank Saini <priyanksaini2010@gmail.com>
+ * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class HttpClient
 {
     /**
-     * Set Curl Chanel
+     * Set Curl Chanell
      * 
-     * @var resourxe
+     * @var resourxc
      */
     public $ch;
     
+    /**
+     * Base contructor will start curl session as soon object is created
+     * 
+     * @access public
+     * @author Priyank Saini<priyanksaini2010@gmail.com>
+     */
     public function __construct() 
     {
         $this->ch = curl_init();
@@ -77,7 +85,7 @@ class HttpClient
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to retun
+     * @return void Nothing to retrun
      */
     public function setAuth($username, $password)
     {
@@ -108,17 +116,35 @@ class HttpClient
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to retyurn
+     * @return void Nothing to return
      */
     public function setUrl($url)
     {
         curl_setopt($this->ch, CURLOPT_URL, $url);
     }
     
+    /**
+     * generates information of curl session
+     * 
+     * @access public
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
+     * @return array Curl Info
+     */
     public function getCurlInfo()
     {
         return curl_getinfo($this->ch);
     }
     
+    /**
+     * Stops Curl Session
+     * 
+     * @access public
+     * @author Priyank Saini<priyanksaini2010@gmail.com>
+     * @return void
+     */
+    public function stopCurl()
+    {
+        curl_close($this->ch);
+    }
 }
 

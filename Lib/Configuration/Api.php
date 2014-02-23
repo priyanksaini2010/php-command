@@ -1,11 +1,13 @@
 <?php
 /**
- * This is a class for Preparing Api According to data provided
+ * This is a class for Preparing Api Arguiments sent from bash command
  * 
  * PHP 5
  * 
- * @package  Submit Issue
+ * @package  php-command
+ * @category API
  * @author   Priyank Saini <priyanksaini2010@gmail.com>
+ * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class Api
 {
@@ -89,6 +91,7 @@ class Api
         }else {
             echo "Issue submission failed";
         }
+        exit;
     }
     
     /**
