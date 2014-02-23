@@ -21,7 +21,8 @@ function __autoload($class)
 {
     require_once ('Configuration/'.$class.'.php');
 }
-
 include 'Lib/Configuration/ConfigFactory.php';
 include 'Lib/Configuration/ErrorHandler.php';
+$errorHandler = new ErrorHandler();
+set_error_handler(array($errorHandler, 'custHandler'));;
 ?>

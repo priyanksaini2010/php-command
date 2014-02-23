@@ -9,15 +9,13 @@
  * @author   Priyank Saini <priyanksaini2010@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  */
-function pr($data)
-{
-    echo "<pre>";
-    print_r($data);
-    echo "<pre>";
-}
-ini_set('display_errors', true);
-error_reporting(E_ALL);
+
 require_once('Lib/Bootstrap.php');
+if (ConfigFactory::getConfigVar('application', 'env') == 'development') {
+    ini_set('display_errors', true);
+    error_reporting(E_ALL);
+}
+
 try{
     ConfigFactory::checkRequest();
 } catch (Exception $ex) {

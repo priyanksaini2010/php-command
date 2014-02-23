@@ -196,7 +196,7 @@ class ConfigFactory
      * @author Priyank Saini <priyanksaini2010@gmail.com>
      * @return boolesn Return true if all parameters are passed and valid
      */
-    protected function validateCredentials($args)
+    protected static function validateCredentials($args)
     {
         if (self::checkDomain($args['domain']) && self::checkAuth($args['username'], $args['password'])&& self::checkRepo($args['repo']) && self::checkContent($args['title'], $args['content']) ) {
             return true;

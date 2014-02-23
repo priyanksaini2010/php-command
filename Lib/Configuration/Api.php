@@ -124,7 +124,7 @@ class Api
      */
     protected function prepareUrl() 
     {
-        $this->url = $this->domainConfig->url->start.$this->credentials['username']."/".$this->domainDetail['repo']."/".$this->domainConfig->url->end;
+        $this->url = $this->domainConfig->url->start.$this->domainDetail['repo']."/".$this->domainConfig->url->end;
     }
     
     /**

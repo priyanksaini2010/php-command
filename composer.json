@@ -1,0 +1,13 @@
+{
+    "name": "vendor/php-command-script-mk1",
+    "description": "Description of project php-command-script-mk1.",
+    "authors": [
+        {
+            "name": "priyank saini",
+            "email": "priyanksaini2010@gmail.com"
+        }
+    ],
+    "require": {
+
+    }
+}
