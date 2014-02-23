@@ -10,6 +10,10 @@ Installation Instructions:
 3. type export PATH=$PATH::directory and press enter
 4. run submit_issues -u "username" -p "password" "domain" "repoownerusername/repo-slug" "title of issue" "body of Issue"
 
-Domain : As we have configured only two domains right now so use  github/bitbucket <For Adding more Please See Extend.md> 
+Domain : As we have configured only two domains right now so use  github/bitbucket <For Adding more Please See Extend.md>
+
+
+Please see Code Documentation for class refferences.
+Code Documentation can be found in folder CodeDocV.3 of this repository.
 
 
