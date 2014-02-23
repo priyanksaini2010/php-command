@@ -1,1 +1,0 @@
-<?php $route = new Dispatcher();?>
