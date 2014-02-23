@@ -5,8 +5,8 @@
  * PHP version 5.3.8
  *
  * @category Configuration
- * @package  GroupOn
- * @author   Priyank Saini <priyank.saini@kelltontech.com>
+ * @package  Submit Issue
+ * @author   Priyank Saini <priyanksaini2010@gmail.com>
  * @license  http://groupon.com/ HR Licence
  * @link     http://groupon.com/
  */
@@ -17,8 +17,8 @@
  * PHP version 5.3.8
  *
  * @category Configuration
- * @package  GroupOn
- * @author   Priyank Saini <priyank.saini@kelltontech.com>
+ * @package  Submit Issue
+ * @author   Priyank Saini <priyanksaini2010@gmail.com>
  * @license  http://groupon.com/ HR Licence
  * @link     http://groupon.com/
  */
@@ -26,27 +26,12 @@ class ConfigFactory
 {
 
     /**
-     * Instance of base controller
-     * 
-     * @var Instance of clas
-     */
-    public static $cController;
-    
-    /**
-     * Instance of model
-     * 
-     * @var Instance of clas
-     */
-    
-    public $cModel;
-    
-    /**
      * to get application configuration varibales   
      * 
      * @param  string $name  varaible name to fetch
      * @param  string $index index of varaible name to fetch
      * 
-     * @author Priyank Saini <priyank.saini@kelltontech.com>
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
      * @access public
      * @return mixed array or string based on arguments 
      * @todo Set ini path accordin to Yii
@@ -69,7 +54,7 @@ class ConfigFactory
      * 
      * @param string $filename <ini file to parse>
      * 
-     * @author Priyank Saini <priyank.saini@kelltontech.com>
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
      * @access Public
      * @return objects
      */
@@ -111,7 +96,7 @@ class ConfigFactory
      * 
      * @param string $array ini Data
      * 
-     * @author Priyank Saini <priyank.saini@kelltontech.com>
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
      * @access Public
      * @return objects
      */
@@ -154,7 +139,7 @@ class ConfigFactory
      * 
      * @param Array $array Multidimention array to convert>
      * 
-     * @author Priyank Saini <priyank.saini@kelltontech.com>
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
      * @access Public
      * @return Std Class Object 
      */
@@ -171,111 +156,48 @@ class ConfigFactory
 
         return $returnValue;
     }
-
+    
     /**
-     * to pass string through for XSS prevention 
+     * Method check if a request made is usable or not
      * 
-     * @param string $string String to sanitize
-     * @param string|array $options If string, DB connection being used, otherwise set of options
-     * 
-     * @author Priyank Saini<priyank.saini@kelltontech.com>
-     * @access Pubblic
-     * @return String 
-     * @todo include satizzing compoenet and santize accordingly
+     * @author Priyank Saini<priyanksaini2010@gmail.com>
+     * @access public
+     * @return boolean
      */
-    public static function cleanStr($string, $options = array()) 
+    public static function checkRequest()
     {
-        if (is_array($string) || is_object($string)) {
-            return $string;
+        if ($_SERVER['argc'] < 12 || $_SERVER['argv']['1'] == '') {
+            $error = new ErrorHandler();
+            $error->badRequest();
+            return false;
         }
-//        App::uses('Sanitize', 'Utility');
-        $options['encode'] = true;
-        $options['remove_html'] = true;
-//        $cleanStr = Sanitize::clean($string, $options);
-        $cleanStr = $string;
-        return $cleanStr;
+        return true;
     }
     
-    public static function resolvePath($string)
+    /**
+     * Resolve the arrguments passed from the Linux Shell
+     * 
+     * @access public
+     * @throws Exception Bad Request 400
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
+     * @return Array array of credentials and data passed from bash
+     */
+    public static function resolveCredential()
     {
-        $return  = array('controller' => 'Site', 'action' => 'index');
-        if ($string != '' || $string != '/') {
-            $stringArray = explode("/",$string);
-            if (count($stringArray) > 0) {
-                unset($stringArray[0]);
-                $stringArray = array_merge($stringArray);
-                if (count($stringArray) > 0 && isset($stringArray[0]) && $stringArray[0] != '' ) {
-                    $return['controller'] = $stringArray[0];
-                    if (isset($stringArray[1]) && $stringArray[1] != '' ) {
-                        $return['action'] = $stringArray[0];
-                    }
-                }
-            }
+        if (isset($_SERVER['argv'][1]) && $_SERVER['argv'][1]!='') {
+            $array['username'] = isset($_SERVER['argv'][2]) ?$_SERVER['argv'][2] : '';
+            $array['password'] = isset($_SERVER['argv'][4]) ?$_SERVER['argv'][4] : '';
+            $array['domain'] = isset($_SERVER['argv'][6]) ?$_SERVER['argv'][6] : '';
+            $array['repo'] = isset($_SERVER['argv'][8]) ?$_SERVER['argv'][8] : '';
+            $array['title'] = isset($_SERVER['argv'][10]) ?$_SERVER['argv'][10] : '';
+            $array['content'] = isset($_SERVER['argv'][11]) ?$_SERVER['argv'][11] : '';
+        } else {
+            $error = new ErrorHandler;
+            $error->badRequest();
         }
-        return $return;
+        return $array;
     }
     
-    public static function getControllerInstance($name)
-    {
-        $filenName = self::resolveFileName($name, 'controller');
-    }
-    
-    protected static function resolveFileName($name)
-    {
-        $type = self::resolveType($name);
-        switch ($type) {
-            case 'controller':
-                $filename = self::resolveClass($name, 'controller');
-                if (!is_object(self::$cController)) {
-                    $object = self::createObj(self::$cController());
-                    return $object;
-                }
-                break;
-            case 'model':
-                break;
-        }
-    }
-    
-    protected function resolveType($name)
-    {
-        $typeControllerArray = explode('controller', $name);
-       
-//        if (count($typeControllerArray) > 1) {
-//            return 'controller';
-//        } else {
-//            throw Exception($message, $code, $previous)
-//        }
-        return 'controller';
-    }
-    
-    protected function createObj($className)
-    {
-        $obj = new $className($className, 'config');
-        return $obj;
-    }
-    
-    protected function resolveClass($class, $type)
-    {
-
-        switch($type){
-            case 'controller':
-                $typeControllerArray = explode('controller', $class);
-                $file = $typeControllerArray[0];
-                $filename = self::createFileName($file, 'controller');
-//                $return  = new $class;
-                break;
-        }
-    }
-    
-    protected function createFileName($class, $type)
-    {
-        switch ($type) {
-            case 'controller':
-                $dirStructure = ConfigFactory::getConfigVar('dir', 'controller');
-                return $dirStructure.DS.$class.'controller.php';
-                break;
-        }
-    }
 }
 
 ?>
