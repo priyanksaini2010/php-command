@@ -26,4 +26,9 @@ try{
      echo  $ex->getMessage();
 }
 $route = new Dispatcher();
+if (isset($route->api->submissionStatus) && $route->api->submissionStatus) {
+    echo $route->api->submissionStatus. PHP_EOL;
+} else {
+    echo 'Unknow Error Occured'. PHP_EOL;
+}
 ?>

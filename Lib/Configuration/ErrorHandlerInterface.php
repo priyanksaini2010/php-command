@@ -9,7 +9,7 @@
  * @author   Priyank Saini <priyanksaini2010@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  */
-interface ErrorHandler
+interface ErrorHandlerInterface
 {
     /**
      * Custom error handler logs All error of Application to error log

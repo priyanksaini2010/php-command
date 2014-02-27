@@ -54,6 +54,13 @@ class Api implements ApiInterface
     protected $response;
     
     /**
+     * String to display after Succesfull Curl Hit
+     *
+     * @var String 
+     */
+    public $submissionStatus;
+    
+    /**
      * Method will configure Credentials Provided and Prepare a request
      * 
      * @param array $credentials   Username/Password To Use
@@ -70,7 +77,7 @@ class Api implements ApiInterface
         $this->credentials = $credentials;
         $this->domainDetail = $domainDetail;
         $this->domainConfig = ConfigFactory::getConfigVar('domain', $this->domainDetail['domain']);
-        $this->prepareRequest();
+        $this->submissionStatus = $this->prepareRequest();
     }
     
     /**
@@ -95,8 +102,8 @@ class Api implements ApiInterface
             $errror = new ErrorHandler();
             $errror->curlException($client->getErrorNumber());
         }
+        return $response = $this->getSubmisssionStatus();
         
-        exit;
     }
     
     /**
@@ -104,7 +111,7 @@ class Api implements ApiInterface
      * 
      * @access protected
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Content will be set on $ccontent
+     * @return null Content will be set on $ccontent
      */
     protected function prepareContent()
     {
@@ -118,6 +125,7 @@ class Api implements ApiInterface
               $this->content = $this->domainConfig->title."=".$this->content['title']."&".$this->domainConfig->content."=".$this->content['content'];
               break;
       }
+      return null;
     }
     
     /**
@@ -125,11 +133,12 @@ class Api implements ApiInterface
      * 
      * @access protected
      * @author Priyank Saini<priyanksaini2010@gmail.com>
-     * @return void URL will be set in $url
+     * @return null
      */
     protected function prepareUrl() 
     {
         $this->url = $this->domainConfig->url->start.$this->domainDetail['repo']."/".$this->domainConfig->url->end;
+        return null;
     }
     
     /**
@@ -144,6 +153,28 @@ class Api implements ApiInterface
        return $client->doRequest();
     }
     
-    
+    /**
+     * Get Issue Submission Status
+     * 
+     * @return string Text To display 
+     * @access public
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
+     */
+    protected function getSubmisssionStatus()
+    {
+        $string = '';
+        if (!empty($this->response)) {
+            if (isset($this->response['state']) || isset($this->response['status'])) {
+               $string = "Issue Submited";
+            } else if (isset($this->response['message'])) {
+                echo $this->response['message'];
+            } else {
+                $string = "Issue Submission failed";
+            }
+        } else {
+            $string = "Issue Submission Failed";
+        }
+        return $string;
+    }
     
 }

@@ -17,8 +17,14 @@ class Dispatcher
     *
     * @var array 
     */
-   public $args;
+   protected $args;
     
+   /**
+    * Store Instance of API 
+    * 
+    * @var array
+    */
+   public $api;
    /**
     * Constructor would invoke base API And Client and set Arguuments
     * 
@@ -30,7 +36,7 @@ class Dispatcher
    {
        try {
            $this->args  = ConfigFactory::resolveCredential();
-           $this->base = new Api(array('username'=>$this->args['username'],'password'=>$this->args['password']), 
+           $this->api = new Api(array('username'=>$this->args['username'],'password'=>$this->args['password']), 
                                  array('title'=>$this->args['title'],'content' => $this->args['content']), 
                                  array('domain'=>$this->args['domain'], 'repo'=>$this->args['repo']));
        } catch (Exception $ex) {
