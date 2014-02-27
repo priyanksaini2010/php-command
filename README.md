@@ -8,7 +8,7 @@ Installation Instructions:
 1. clone git repo to www directory via git clone https://github.com/priyanksaini2010/php-command.git
 2. cd /path/to/php-command/
 3. type export PATH=$PATH::directory and press enter
-4. run submit_issues -u <username> -p <password> <repo url> "<issue title>" "<issue body>"
+4. run submit_issues -u username -p password repo_ur "<issue title>" "<issue body>"
 
 Example : submit_issues -u priyanksaini2010 -p mypassword https://github.com/priyanksaini2010/php-command "title of issue" "Content of issue"
 
