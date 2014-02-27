@@ -8,13 +8,14 @@ Installation Instructions:
 1. clone git repo to www directory via git clone https://github.com/priyanksaini2010/php-command.git
 2. cd /path/to/php-command/
 3. type export PATH=$PATH::directory and press enter
-4. run submit_issues -u "username" -p "password" "domain" "repoownerusername/repo-slug" "title of issue" "body of Issue".
-   Example : submit_issues -u "priyanksaini2010" -p "mypassword" "github" "priyanksaini2010/php-command" "title of issue" "body of Issue"
+4. run submit_issues -u <username> -p  <password>  <url of repository> "title of issue" "body of Issue".
 
-Domain : As we have configured only two domains right now so use  github/bitbucket <For Adding more Please See Extend.md>
+Example : submit_issues -u priyanksaini2010 -p mypassword https://github.com/priyanksaini2010/php-command "title of issue" "Content of issue"
+
+PS: if you have # in your password or username, please user " before and after same.
 
 
 Please see Code Documentation for class refferences.
-Code Documentation can be found in folder CodeDocV.3 of this repository.
+Code Documentation can be found in folder CodeDocV.4 of this repository.
 
 
