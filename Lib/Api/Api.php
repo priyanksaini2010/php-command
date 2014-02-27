@@ -9,7 +9,7 @@
  * @author   Priyank Saini <priyanksaini2010@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class Api
+class Api implements ApiInterface
 {
     /**
      * Username/Password For the API To call
@@ -45,7 +45,14 @@ class Api
      * @var string 
      */
     protected $url;
-
+    
+    /**
+     * Response of API request
+     *
+     * @var array 
+     */
+    protected $response;
+    
     /**
      * Method will configure Credentials Provided and Prepare a request
      * 
@@ -83,14 +90,12 @@ class Api
         $client->setHeader($this->content, $this->domainConfig->format);
         $client->setUserAgent();
         $client->setUrl($this->url);
-        $res = $this->doRequest($client);
-        if (isset($res['state']) ||  isset($res['status'])){
-            echo "Issue Submited";
-        } else if(isset($res['message'])){
-            echo $res['message'];
-        }else {
-            echo "Issue submission failed";
+        $this->response = $this->doRequest($client);
+        if ($client->getErrorNumber() != 0) {
+            $errror = new ErrorHandler();
+            $errror->curlException($client->getErrorNumber());
         }
+        
         exit;
     }
     

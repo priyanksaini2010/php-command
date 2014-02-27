@@ -16,10 +16,34 @@
  * 
  * @param type $class
  * @author Priyank Saini<priyanksaini2010@gmail.com>
+ * @return object Object Of the Class
  */
 function __autoload($class)
 {
-    require_once ('Configuration/'.$class.'.php');
+    $filename = $class.'.php';
+    $path = __DIR__;
+    if (file_exists($path . '/Configuration/' . $filename)) {
+        $dir = 'Configuration';
+        require_once ($path . '/Configuration/' . $filename);
+    } else if (file_exists($path . '/Api/' . $filename)) {
+        $dir = 'Api';
+        require_once ($path . '/Api/'. $filename);
+    } else if (file_exists($path. '/Client/' . $filename)) {
+        $dir = 'Client';
+        require_once ($path . '/Client/'. $filename);
+    } else  {
+        $content = "File :" . $filename . " not found";
+        $file = $path. "/Log/error.log";
+        file_put_contents($file, date('Y-m-d h:i:s :') . $content.PHP_EOL);
+        echo $content;
+        exit;
+    }
+    $interfaces = class_implements($class,FALSE);
+    foreach ($interfaces as $name) {
+        if (!class_exists($name, FALSE)) {
+            require_once($path. "/" . $dir . "/" . $name . ".php");
+        }
+    }
 }
 include 'Lib/Configuration/ConfigFactory.php';
 include 'Lib/Configuration/ErrorHandler.php';

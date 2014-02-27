@@ -9,7 +9,7 @@
  * @author   Priyank Saini <priyanksaini2010@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class ErrorHandler
+class ErrorHandler implements ErrorHandlerInterface
 {
     
     /**
@@ -58,6 +58,21 @@ class ErrorHandler
     public function badContent()
     {
         throw new Exception('Title and Body Of Issue is required.');
+    }
+    
+    /**
+     * Method to throw exception if curl error occcured
+     * 
+     * @param integer $curlErrNo Curl Error Number
+     * 
+     * @throws Exception
+     * @access public
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
+     * @return void Nothing to return just Exception
+     */
+    public function curlException($curlErrNo)
+    {
+        throw new Exception('Curl Error #'.$curlErrNo.' has occured.');
     }
     
     /**

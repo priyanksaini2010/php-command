@@ -177,7 +177,7 @@ class ConfigFactory
             $args['domain'] = isset($_SERVER['argv'][6]) ?$_SERVER['argv'][6] : '';
             $args['repo'] = isset($_SERVER['argv'][8]) ?$_SERVER['argv'][8] : '';
             $args['title'] = isset($_SERVER['argv'][10]) ?$_SERVER['argv'][10] : '';
-            $args['content'] = isset($_SERVER['argv'][11]) ?$_SERVER['argv'][11] : '';
+            $args['content'] = isset($_SERVER['argv'][12]) ?$_SERVER['argv'][12] : '';
             if (self::validateCredentials($args)) {
                 return $args;
             }

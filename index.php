@@ -9,7 +9,11 @@
  * @author   Priyank Saini <priyanksaini2010@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
+function pr ($data) {
+    echo "<pre>";
+    print_r($data);
+    die;
+}
 require_once('Lib/Bootstrap.php');
 if (ConfigFactory::getConfigVar('application', 'env') == 'development') {
     ini_set('display_errors', true);
@@ -21,6 +25,5 @@ try{
 } catch (Exception $ex) {
      echo  $ex->getMessage();
 }
-
 $route = new Dispatcher();
 ?>

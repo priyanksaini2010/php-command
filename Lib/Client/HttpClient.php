@@ -9,10 +9,10 @@
  * @author   Priyank Saini <priyanksaini2010@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class HttpClient
+class HttpClient implements HttpClientInterface
 {
     /**
-     * Set Curl Chanell
+     * Set Curl Channel
      * 
      * @var resourxc
      */
@@ -145,6 +145,18 @@ class HttpClient
     public function stopCurl()
     {
         curl_close($this->ch);
+    }
+    
+    /**
+     * Get Curl Error Number
+     * 
+     * @access public
+     * @author Priyank Saini <priyank.saini@kelltontech.com>
+     * @return array Return curl error
+     */
+    public function getErrorNumber()
+    {
+        return curl_errno($this->ch);
     }
 }
 
