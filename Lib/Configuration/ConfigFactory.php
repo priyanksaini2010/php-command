@@ -153,7 +153,7 @@ class ConfigFactory
      */
     public static function checkRequest()
     {
-        if ($_SERVER['argc'] < 12 || $_SERVER['argv']['1'] == '') {
+        if ($_SERVER['argc'] < 11 || $_SERVER['argv']['1'] == '' && $_SERVER['argc'] > 11 ) {
             $error = new ErrorHandler();
             $error->badRequest();
             return false;
@@ -172,12 +172,18 @@ class ConfigFactory
     public static function resolveCredential()
     {
         if (isset($_SERVER['argv'][1]) && $_SERVER['argv'][1]!='') {
-            $args['username'] = isset($_SERVER['argv'][2]) ?$_SERVER['argv'][2] : '';
-            $args['password'] = isset($_SERVER['argv'][4]) ?$_SERVER['argv'][4] : '';
-            $args['domain'] = isset($_SERVER['argv'][6]) ?$_SERVER['argv'][6] : '';
-            $args['repo'] = isset($_SERVER['argv'][8]) ?$_SERVER['argv'][8] : '';
-            $args['title'] = isset($_SERVER['argv'][10]) ?$_SERVER['argv'][10] : '';
-            $args['content'] = isset($_SERVER['argv'][12]) ?$_SERVER['argv'][12] : '';
+            if (isset($_SERVER['argv'][6])) {
+                 $domainAndRepo = self::resolveDomainAndRepo();
+            } else {
+                $error = new ErrorHandler;
+                $error->badRequest();
+            }
+            $args['username'] = isset($_SERVER['argv'][2]) ? $_SERVER['argv'][2] : '';
+            $args['password'] = isset($_SERVER['argv'][4]) ? $_SERVER['argv'][4] : '';
+            $args['domain'] = isset($domainAndRepo['domain']) && $domainAndRepo['domain'] != null ? $domainAndRepo['domain'] : '';
+            $args['repo'] = isset($domainAndRepo['repo']) ? $domainAndRepo['repo'] : '';
+            $args['title'] = isset($_SERVER['argv'][8]) ? $_SERVER['argv'][8] : '';
+            $args['content'] = isset($_SERVER['argv'][10]) ? $_SERVER['argv'][10] : '';
             if (self::validateCredentials($args)) {
                 return $args;
             }
@@ -185,6 +191,48 @@ class ConfigFactory
             $error = new ErrorHandler;
             $error->badRequest();
         }
+    }
+    
+    /**
+     * Method will resolve domain and repo name from url passed in command
+     * 
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
+     * @access public
+     * @return array If arguments are passed correctly, else blank array
+     */
+    protected static function resolveDomainAndRepo()
+    {
+        $return = array();
+        if (isset($_SERVER['argv'][6])) 
+        {
+           $args = explode('/', $_SERVER['argv'][6]); 
+           if (isset($args[2]) && isset($args[4]) && isset($args[3])) {
+               $return['domain'] = self::resolveDomain($args[2]);
+               $return['repo'] = $args[3]."/".$args[4];
+           }
+        }
+        return $return;
+    }
+    
+    /**
+     * Method will resolve domain/repo name from the url passed as parameter
+     * 
+     * @param string $domain string from which domain has to be resolve
+     * 
+     * @access protected
+     * @author Priyank Saini <priyanksaini2010@gmail.com>
+     * @return string If url passed is correct else null
+     */
+    protected static function resolveDomain($domain)
+    {
+        $return  = null;
+        if ($domain != '') {
+            $domStrArray  = explode('.', $domain) ;
+            if (isset($domStrArray[0])) {
+                $return  = $domStrArray[0];
+            }
+        }
+        return $return;
     }
     
     /**

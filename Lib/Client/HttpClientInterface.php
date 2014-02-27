@@ -1,6 +1,6 @@
 <?php
 /**
- * This is a interface for HTTPClient library
+ * This is a class for preparing curl for making request and geting response
  * 
  * PHP 5
  * 
@@ -11,7 +11,8 @@
  */
 interface HttpClientInterface
 {
-   /**
+    
+    /**
      * This method will execute Curl and return curl response
      * 
      * @access public
@@ -25,7 +26,7 @@ interface HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to return
+     * @return null set user agent on curl session
      */
     public function setUserAgent();
     
@@ -34,7 +35,7 @@ interface HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to return
+     * @return null set headers in curl session
      */
     public function setHeader($data, $format);
     
@@ -46,7 +47,7 @@ interface HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to retrun
+     * @return null set auth in current curl session
      */
     public function setAuth($username, $password);
     
@@ -57,7 +58,7 @@ interface HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to return
+     * @return null set post data in current curl sesssion
      */
     public function setPost($content);
     
@@ -68,7 +69,7 @@ interface HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to return
+     * @return null set url string in current surl session
      */
     public function setUrl($url);
     
@@ -89,6 +90,16 @@ interface HttpClientInterface
      * @return void
      */
     public function stopCurl();
+    
+    
+    /**
+     * Get Curl Error Number
+     * 
+     * @access public
+     * @author Priyank Saini <priyank.saini@kelltontech.com>
+     * @return array Return curl error
+     */
+    public function getErrorNumber();
     
 }
 

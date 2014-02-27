@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Api | php-command-script-mk1</title>
+
+	<script type="text/javascript" src="resources/combined.js?3117143042"></script>
+	<script type="text/javascript" src="elementlist.js?493312561"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="package-php.command.html">php-command</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Api.html">Api</a></li>
+				<li><a href="class-ConfigFactory.html">ConfigFactory</a></li>
+				<li><a href="class-Dispatcher.html">Dispatcher</a></li>
+				<li><a href="class-ErrorHandler.html">ErrorHandler</a></li>
+				<li><a href="class-HttpClient.html">HttpClient</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-ApiInterface.html">ApiInterface</a></li>
+				<li><a href="class-ErrorHandlerInterface.html">ErrorHandlerInterface</a></li>
+				<li><a href="class-HttpClientInterface.html">HttpClientInterface</a></li>
+			</ul>
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-__autoload.html">__autoload</a></li>
+				<li><a href="function-pr.html">pr</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-php.command.html" title="Summary of php-command"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Api</h1>
+
+
+	<div class="description">
+	
+<p>This is a class for Preparing Api Arguiments sent from bash command</p>
+
+<p>PHP 5</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Api</span></b>			
+			 implements 
+				<a href="class-ApiInterface.html"><span>ApiInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-php.command.html">php-command</a><br />
+
+				<b>Category:</b>
+				API<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a><br />
+				<b>Author:</b>
+				Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-Api.html#2-181" title="Go to source code">Lib/Api/Api.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			type
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Api.html#63-81" title="Go to source code">__construct</a>( <span>array <var>$credentials</var></span>, <span>array <var>$content</var></span>, <span>array <var>$domainDetail</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Method will configure Credentials Provided and Prepare a request</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Method will configure Credentials Provided and Prepare a request</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$credentials</var></dt>
+					<dd><code>array</code><br>$credentials Username/Password To Use</dd>
+					<dt><var>$content</var></dt>
+					<dd><code>array</code><br>$content Issue's Title And Content</dd>
+					<dt><var>$domainDetail</var></dt>
+					<dd><code>array</code><br>$domainDetails Domain And Repo slug</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>type</code><br>Description<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini&lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="prepareRequest" id="_prepareRequest">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prepareRequest">#</a>
+		<code><a href="source-class-Api.html#83-107" title="Go to source code">prepareRequest</a>( )</code>
+
+		<div class="description short">
+			
+<p>Prepare request according to the Args</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Prepare request according to the Args</p>
+
+
+
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-ApiInterface.html#_prepareRequest">ApiInterface::prepareRequest()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="prepareContent" id="_prepareContent">
+
+		<td class="attributes"><code>
+			 protected 
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prepareContent">#</a>
+		<code><a href="source-class-Api.html#109-129" title="Go to source code">prepareContent</a>( )</code>
+
+		<div class="description short">
+			
+<p>Prepare content to post</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Prepare content to post</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br>Content will be set on $ccontent<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="prepareUrl" id="_prepareUrl">
+
+		<td class="attributes"><code>
+			 protected 
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prepareUrl">#</a>
+		<code><a href="source-class-Api.html#131-142" title="Go to source code">prepareUrl</a>( )</code>
+
+		<div class="description short">
+			
+<p>Prepare API url according to args provided</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Prepare API url according to args provided</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini&lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="doRequest" id="_doRequest">
+
+		<td class="attributes"><code>
+			 protected 
+			json
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_doRequest">#</a>
+		<code><a href="source-class-Api.html#144-154" title="Go to source code">doRequest</a>( <span><code><a href="class-HttpClient.html">HttpClient</a></code> <var>$client</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Make API call For Creating new Issue</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Make API call For Creating new Issue</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$client</var></dt>
+					<dd><code><code><a href="class-HttpClient.html">HttpClient</a></code></code><br>$client</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>json</code><br>Response from API Call<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getSubmisssionStatus" id="_getSubmisssionStatus">
+
+		<td class="attributes"><code>
+			 protected 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getSubmisssionStatus">#</a>
+		<code><a href="source-class-Api.html#156-179" title="Go to source code">getSubmisssionStatus</a>( )</code>
+
+		<div class="description short">
+			
+<p>Get Issue Submission Status</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get Issue Submission Status</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Text To display<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="credentials" id="$credentials">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Api.html#14-19" title="Go to source code"><var>$credentials</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$credentials" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Username/Password For the API To call</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Username/Password For the API To call</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="content" id="$content">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Api.html#21-26" title="Go to source code"><var>$content</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$content" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Title and Body to submit</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Title and Body to submit</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="domainDetail" id="$domainDetail">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Api.html#28-33" title="Go to source code"><var>$domainDetail</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$domainDetail" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Domain and Repo Detail where Issue will post</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Domain and Repo Detail where Issue will post</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="domainConfig" id="$domainConfig">
+		<td class="attributes"><code>
+			protected  
+			object
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Api.html#35-40" title="Go to source code"><var>$domainConfig</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$domainConfig" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Set Domain Configuration From INI acc to domain sent on args</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set Domain Configuration From INI acc to domain sent on args</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="url" id="$url">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Api.html#42-47" title="Go to source code"><var>$url</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$url" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Domain Url to set According to repo name and username</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Domain Url to set According to repo name and username</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="response" id="$response">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Api.html#49-54" title="Go to source code"><var>$response</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$response" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Response of API request</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Response of API request</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="submissionStatus" id="$submissionStatus">
+		<td class="attributes"><code>
+			public  
+			String
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Api.html#56-61" title="Go to source code"><var>$submissionStatus</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$submissionStatus" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>String to display after Succesfull Curl Hit</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>String to display after Succesfull Curl Hit</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		php-command-script-mk1 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

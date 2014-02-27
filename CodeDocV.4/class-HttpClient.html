@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class HttpClient | php-command-script-mk1</title>
+
+	<script type="text/javascript" src="resources/combined.js?3117143042"></script>
+	<script type="text/javascript" src="elementlist.js?493312561"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="package-php.command.html">php-command</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Api.html">Api</a></li>
+				<li><a href="class-ConfigFactory.html">ConfigFactory</a></li>
+				<li><a href="class-Dispatcher.html">Dispatcher</a></li>
+				<li><a href="class-ErrorHandler.html">ErrorHandler</a></li>
+				<li class="active"><a href="class-HttpClient.html">HttpClient</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-ApiInterface.html">ApiInterface</a></li>
+				<li><a href="class-ErrorHandlerInterface.html">ErrorHandlerInterface</a></li>
+				<li><a href="class-HttpClientInterface.html">HttpClientInterface</a></li>
+			</ul>
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-__autoload.html">__autoload</a></li>
+				<li><a href="function-pr.html">pr</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-php.command.html" title="Summary of php-command"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class HttpClient</h1>
+
+
+	<div class="description">
+	
+<p>This is a class for preparing curl for making request and geting response</p>
+
+<p>PHP 5</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>HttpClient</span></b>			
+			 implements 
+				<a href="class-HttpClientInterface.html"><span>HttpClientInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-php.command.html">php-command</a><br />
+
+				<b>Category:</b>
+				API<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a><br />
+				<b>Author:</b>
+				Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-HttpClient.html#2-167" title="Go to source code">Lib/Client/HttpClient.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-HttpClient.html#21-30" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+<p>Base contructor will start curl session as soon object is created</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Base contructor will start curl session as soon object is created</p>
+
+
+
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini&lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="doRequest" id="_doRequest">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_doRequest">#</a>
+		<code><a href="source-class-HttpClient.html#32-43" title="Go to source code">doRequest</a>( )</code>
+
+		<div class="description short">
+			
+<p>This method will execute Curl and return curl response</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>This method will execute Curl and return curl response</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>response from API Hit<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-HttpClientInterface.html#_doRequest">HttpClientInterface::doRequest()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setUserAgent" id="_setUserAgent">
+
+		<td class="attributes"><code>
+			 public 
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setUserAgent">#</a>
+		<code><a href="source-class-HttpClient.html#45-56" title="Go to source code">setUserAgent</a>( )</code>
+
+		<div class="description short">
+			
+<p>Set Curl User Agent</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set Curl User Agent</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br>set user agent on curl session<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-HttpClientInterface.html#_setUserAgent">HttpClientInterface::setUserAgent()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setHeader" id="_setHeader">
+
+		<td class="attributes"><code>
+			 public 
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setHeader">#</a>
+		<code><a href="source-class-HttpClient.html#58-80" title="Go to source code">setHeader</a>( <span>mixed <var>$data</var></span>, <span>mixed <var>$format</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set Curl Headers</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set Curl Headers</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br>set headers in curl session<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-HttpClientInterface.html#_setHeader">HttpClientInterface::setHeader()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setAuth" id="_setAuth">
+
+		<td class="attributes"><code>
+			 public 
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setAuth">#</a>
+		<code><a href="source-class-HttpClient.html#82-98" title="Go to source code">setAuth</a>( <span>string <var>$username</var></span>, <span>string <var>$password</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set Username and pasword for authentication</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set Username and pasword for authentication</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username Username, who is submiting issue of set domain</dd>
+					<dt><var>$password</var></dt>
+					<dd><code>string</code><br>$password Username, who is submiting issue of set domain</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br>set auth in current curl session<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-HttpClientInterface.html#_setAuth">HttpClientInterface::setAuth()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setPost" id="_setPost">
+
+		<td class="attributes"><code>
+			 public 
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setPost">#</a>
+		<code><a href="source-class-HttpClient.html#100-114" title="Go to source code">setPost</a>( <span>json <var>$content</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set Body of the API request</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set Body of the API request</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$content</var></dt>
+					<dd><code>json</code><br>$name Body of the Issue</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br>set post data in current curl sesssion<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-HttpClientInterface.html#_setPost">HttpClientInterface::setPost()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setUrl" id="_setUrl">
+
+		<td class="attributes"><code>
+			 public 
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setUrl">#</a>
+		<code><a href="source-class-HttpClient.html#116-129" title="Go to source code">setUrl</a>( <span>string <var>$url</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set Curl Url to make request</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set Curl Url to make request</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$url</var></dt>
+					<dd><code>string</code><br>$url URL to make request</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br>set url string in current surl session<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-HttpClientInterface.html#_setUrl">HttpClientInterface::setUrl()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getCurlInfo" id="_getCurlInfo">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCurlInfo">#</a>
+		<code><a href="source-class-HttpClient.html#131-141" title="Go to source code">getCurlInfo</a>( )</code>
+
+		<div class="description short">
+			
+<p>generates information of curl session</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>generates information of curl session</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>Curl Info<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-HttpClientInterface.html#_getCurlInfo">HttpClientInterface::getCurlInfo()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="stopCurl" id="_stopCurl">
+
+		<td class="attributes"><code>
+			 public 
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_stopCurl">#</a>
+		<code><a href="source-class-HttpClient.html#143-154" title="Go to source code">stopCurl</a>( )</code>
+
+		<div class="description short">
+			
+<p>Stops Curl Session</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Stops Curl Session</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini&lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-HttpClientInterface.html#_stopCurl">HttpClientInterface::stopCurl()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getErrorNumber" id="_getErrorNumber">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getErrorNumber">#</a>
+		<code><a href="source-class-HttpClient.html#156-166" title="Go to source code">getErrorNumber</a>( )</code>
+
+		<div class="description short">
+			
+<p>Get Curl Error Number</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get Curl Error Number</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>Return curl error<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyank.saini&#64;kelltontech.com">priyank.saini&#64;<!---->kelltontech.com</a>&gt;<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-HttpClientInterface.html#_getErrorNumber">HttpClientInterface::getErrorNumber()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="ch" id="$ch">
+		<td class="attributes"><code>
+			public  
+			resourxc
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-HttpClient.html#14-19" title="Go to source code"><var>$ch</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$ch" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Set Curl Channel</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set Curl Channel</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		php-command-script-mk1 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

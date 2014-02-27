@@ -21,7 +21,9 @@ class ErrorHandler implements ErrorHandlerInterface
      */
     public function badRequest()
     {
-        throw new Exception('Bad Request');
+        $content = "Bad Request".PHP_EOL." Please enter following command for help:".PHP_EOL."submit_issues -help";
+        throw new Exception('Bad Request'.PHP_EOL);
+        exit;
     }
     
     /**
@@ -33,7 +35,8 @@ class ErrorHandler implements ErrorHandlerInterface
      */
     public function badAuth()
     {
-        throw new Exception('Username Or Pasword Not Provided.');
+        throw new Exception('Username Or Pasword Not Provided.'.PHP_EOL);
+        exit;
     }
     
     /**
@@ -45,7 +48,8 @@ class ErrorHandler implements ErrorHandlerInterface
      */
     public function badDomain()
     {
-        throw new Exception('Domain Not Registered.');
+        throw new Exception('Domain Not Registered.'.PHP_EOL);
+        exit;
     }
     
     /**
@@ -57,7 +61,8 @@ class ErrorHandler implements ErrorHandlerInterface
      */
     public function badContent()
     {
-        throw new Exception('Title and Body Of Issue is required.');
+        throw new Exception('Title and Body Of Issue is required.'.PHP_EOL);
+        exit;
     }
     
     /**
@@ -72,7 +77,8 @@ class ErrorHandler implements ErrorHandlerInterface
      */
     public function curlException($curlErrNo)
     {
-        throw new Exception('Curl Error #'.$curlErrNo.' has occured.');
+        throw new Exception('Curl Error #'.$curlErrNo.' has occured.'.PHP_EOL);
+        exit;
     }
     
     /**

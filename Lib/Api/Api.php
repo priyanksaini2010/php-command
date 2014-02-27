@@ -164,12 +164,13 @@ class Api implements ApiInterface
     {
         $string = '';
         if (!empty($this->response)) {
-            if (isset($this->response['state']) || isset($this->response['status'])) {
+            $this->response = json_decode($this->response);
+            if ((isset($this->response->state) || isset($this->response->status)) && (is_array($this->response) || is_object($this->response) )) {
                $string = "Issue Submited";
-            } else if (isset($this->response['message'])) {
-                echo $this->response['message'];
+            } else if (isset($this->response->message)) {
+                $this->response->message;
             } else {
-                $string = "Issue Submission failed";
+                $string = $this->response;
             }
         } else {
             $string = "Issue Submission Failed";

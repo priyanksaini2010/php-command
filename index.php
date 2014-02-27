@@ -27,8 +27,15 @@ try{
 }
 $route = new Dispatcher();
 if (isset($route->api->submissionStatus) && $route->api->submissionStatus) {
-    echo $route->api->submissionStatus. PHP_EOL;
+    if (is_string($route->api->submissionStatus)) {
+        echo $route->api->submissionStatus. PHP_EOL;
+    } else {
+        echo '<pre>';
+        $route->api->submissionStatus;
+        echo '</pre>';
+        echo PHP_EOL;
+    }
 } else {
-    echo 'Unknow Error Occured'. PHP_EOL;
+    echo 'Unable to Submit Issue. Please Check Your credentials And Repo URL'. PHP_EOL;
 }
 ?>

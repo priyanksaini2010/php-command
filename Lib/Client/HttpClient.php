@@ -47,11 +47,12 @@ class HttpClient implements HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to return
+     * @return null set user agent on curl session
      */
     public function setUserAgent()
     {
         curl_setopt($this->ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+        return null;
     }
     
     /**
@@ -59,7 +60,7 @@ class HttpClient implements HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to return
+     * @return null set headers in curl session
      */
     public function setHeader($data, $format)
     {
@@ -75,6 +76,7 @@ class HttpClient implements HttpClientInterface
             $header,
             'Content-Length: ' . strlen($data))
         );
+        return null;
     }
     
     /**
@@ -85,13 +87,14 @@ class HttpClient implements HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to retrun
+     * @return null set auth in current curl session
      */
     public function setAuth($username, $password)
     {
         
         $credentials = $username.':'.$password;
         curl_setopt($this->ch, CURLOPT_USERPWD, $credentials);
+        return null;
     }
     
     /**
@@ -101,12 +104,13 @@ class HttpClient implements HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to return
+     * @return null set post data in current curl sesssion
      */
     public function setPost($content)
     {
         curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($this->ch, CURLOPT_POSTFIELDS, $content);
+        return null;
     }
     
     /**
@@ -116,11 +120,12 @@ class HttpClient implements HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini <priyanksaini2010@gmail.com>
-     * @return void Nothing to return
+     * @return null set url string in current surl session
      */
     public function setUrl($url)
     {
         curl_setopt($this->ch, CURLOPT_URL, $url);
+        return null;
     }
     
     /**
@@ -140,11 +145,12 @@ class HttpClient implements HttpClientInterface
      * 
      * @access public
      * @author Priyank Saini<priyanksaini2010@gmail.com>
-     * @return void
+     * @return null
      */
     public function stopCurl()
     {
         curl_close($this->ch);
+        return null;
     }
     
     /**

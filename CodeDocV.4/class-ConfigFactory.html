@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class ConfigFactory | php-command-script-mk1</title>
+
+	<script type="text/javascript" src="resources/combined.js?3117143042"></script>
+	<script type="text/javascript" src="elementlist.js?493312561"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="package-php.command.html">php-command</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Api.html">Api</a></li>
+				<li class="active"><a href="class-ConfigFactory.html">ConfigFactory</a></li>
+				<li><a href="class-Dispatcher.html">Dispatcher</a></li>
+				<li><a href="class-ErrorHandler.html">ErrorHandler</a></li>
+				<li><a href="class-HttpClient.html">HttpClient</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-ApiInterface.html">ApiInterface</a></li>
+				<li><a href="class-ErrorHandlerInterface.html">ErrorHandlerInterface</a></li>
+				<li><a href="class-HttpClientInterface.html">HttpClientInterface</a></li>
+			</ul>
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-__autoload.html">__autoload</a></li>
+				<li><a href="function-pr.html">pr</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-php.command.html" title="Summary of php-command"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ConfigFactory</h1>
+
+
+	<div class="description">
+	
+<p>Common Nuts and Bolts.Contains Application configuration variables,Parsed Via
+Config INI And other usefull functions</p>
+
+<p>PHP version 5.3.8</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-php.command.html">php-command</a><br />
+
+				<b>Category:</b>
+				Configuration<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a><br />
+				<b>Author:</b>
+				Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-ConfigFactory.html#2-333" title="Go to source code">Lib/Configuration/ConfigFactory.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="getConfigVar" id="_getConfigVar">
+
+		<td class="attributes"><code>
+			 public static
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConfigVar">#</a>
+		<code><a href="source-class-ConfigFactory.html#15-37" title="Go to source code">getConfigVar</a>( <span>string <var>$name</var></span>, <span>string <var>$index</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			
+<p>to get application configuration varibales</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>to get application configuration varibales</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name varaible name to fetch</dd>
+					<dt><var>$index</var></dt>
+					<dd><code>string</code><br>$index index of varaible name to fetch</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>array or string based on arguments<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parse_ini_file_advanced" id="_parse_ini_file_advanced">
+
+		<td class="attributes"><code>
+			 public static
+			objects
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parse_ini_file_advanced">#</a>
+		<code><a href="source-class-ConfigFactory.html#39-79" title="Go to source code">parse_ini_file_advanced</a>( <span>string <var>$filename</var></span> )</code>
+
+		<div class="description short">
+			
+<p>to parse ini file</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>to parse ini file</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$filename</var></dt>
+					<dd><code>string</code><br>$filename &lt;ini file to parse&gt;</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>objects</code><br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="recursive_parse" id="_recursive_parse">
+
+		<td class="attributes"><code>
+			 public static
+			objects
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_recursive_parse">#</a>
+		<code><a href="source-class-ConfigFactory.html#81-122" title="Go to source code">recursive_parse</a>( <span>string <var>$array</var></span> )</code>
+
+		<div class="description short">
+			
+<p>to parse ini file recursively</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>to parse ini file recursively</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd><code>string</code><br>$array ini Data</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>objects</code><br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="toObject" id="_toObject">
+
+		<td class="attributes"><code>
+			 public static
+			Std
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_toObject">#</a>
+		<code><a href="source-class-ConfigFactory.html#124-145" title="Go to source code">toObject</a>( <span>Array <var>$array</var></span> )</code>
+
+		<div class="description short">
+			
+<p>to parse a multidimention array to STD Class Object</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>to parse a multidimention array to STD Class Object</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd><code>Array</code><br>$array Multidimention array to convert&gt;</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Std</code><br>Class Object<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="checkRequest" id="_checkRequest">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkRequest">#</a>
+		<code><a href="source-class-ConfigFactory.html#147-162" title="Go to source code">checkRequest</a>( )</code>
+
+		<div class="description short">
+			
+<p>Method check if a request made is usable or not</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Method check if a request made is usable or not</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini&lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="resolveCredential" id="_resolveCredential">
+
+		<td class="attributes"><code>
+			 public static
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_resolveCredential">#</a>
+		<code><a href="source-class-ConfigFactory.html#164-194" title="Go to source code">resolveCredential</a>( )</code>
+
+		<div class="description short">
+			
+<p>Resolve the arrguments passed from the Linux Shell</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Resolve the arrguments passed from the Linux Shell</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>array of credentials and data passed from bash<br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br>Bad Request 400<br />
+				</div>
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="resolveDomainAndRepo" id="_resolveDomainAndRepo">
+
+		<td class="attributes"><code>
+			 protected static
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_resolveDomainAndRepo">#</a>
+		<code><a href="source-class-ConfigFactory.html#196-215" title="Go to source code">resolveDomainAndRepo</a>( )</code>
+
+		<div class="description short">
+			
+<p>Method will resolve domain and repo name from url passed in command</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Method will resolve domain and repo name from url passed in command</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>If arguments are passed correctly, else blank array<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="resolveDomain" id="_resolveDomain">
+
+		<td class="attributes"><code>
+			 protected static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_resolveDomain">#</a>
+		<code><a href="source-class-ConfigFactory.html#217-236" title="Go to source code">resolveDomain</a>( <span>string <var>$domain</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Method will resolve domain/repo name from the url passed as parameter</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Method will resolve domain/repo name from the url passed as parameter</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$domain</var></dt>
+					<dd><code>string</code><br>$domain string from which domain has to be resolve</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>If url passed is correct else null<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validateCredentials" id="_validateCredentials">
+
+		<td class="attributes"><code>
+			 protected static
+			boolesn
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validateCredentials">#</a>
+		<code><a href="source-class-ConfigFactory.html#238-252" title="Go to source code">validateCredentials</a>( <span>array <var>$args</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Method will Validate domain namd and other credentials Supplied</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Method will Validate domain namd and other credentials Supplied</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$args</var></dt>
+					<dd><code>array</code><br>$params Parameters sent from bash</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolesn</code><br>Return true if all parameters are passed and valid<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini &lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="checkDomain" id="_checkDomain">
+
+		<td class="attributes"><code>
+			 protected static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkDomain">#</a>
+		<code><a href="source-class-ConfigFactory.html#254-272" title="Go to source code">checkDomain</a>( <span>string <var>$domain</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Check If domain suplied and is valid or not</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Check If domain suplied and is valid or not</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$domain</var></dt>
+					<dd><code>string</code><br>$domain</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code>Bad</code><br>Domain Exception<br />
+				</div>
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini&lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="checkAuth" id="_checkAuth">
+
+		<td class="attributes"><code>
+			 protected static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkAuth">#</a>
+		<code><a href="source-class-ConfigFactory.html#274-292" title="Go to source code">checkAuth</a>( <span>type <var>$username</var></span>, <span>type <var>$password</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Check If domain suplied and is valid or not</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Check If domain suplied and is valid or not</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>type</code><br>$username Username For API Authorization</dd>
+					<dt><var>$password</var></dt>
+					<dd><code>type</code><br>$password Password For API Authorization</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code>Bad</code><br>Auth Exception<br />
+				</div>
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini&lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="checkRepo" id="_checkRepo">
+
+		<td class="attributes"><code>
+			 protected static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkRepo">#</a>
+		<code><a href="source-class-ConfigFactory.html#294-311" title="Go to source code">checkRepo</a>( <span>string <var>$repo</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Check If repo name suplied and is valid or not</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Check If repo name suplied and is valid or not</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$repo</var></dt>
+					<dd><code>string</code><br>$repo repo to create issue</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code>Bad</code><br>Auth Exception<br />
+				</div>
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini&lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="checkContent" id="_checkContent">
+
+		<td class="attributes"><code>
+			 protected static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkContent">#</a>
+		<code><a href="source-class-ConfigFactory.html#313-331" title="Go to source code">checkContent</a>( <span>string <var>$title</var></span>, <span>string <var>$body</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Check If title and body of Issue is provided</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Check If title and body of Issue is provided</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$title</var></dt>
+					<dd><code>string</code><br>$title Title Of Issue</dd>
+					<dt><var>$body</var></dt>
+					<dd><code>string</code><br>$body Body Of Issue</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code>Bad</code><br>Content Exception<br />
+				</div>
+
+				<h4>Author</h4>
+				<div class="list">
+						Priyank Saini&lt;<a
+href="mailto:priyanksaini2010&#64;gmail.com">priyanksaini2010&#64;<!---->gmail.com</a>&gt;<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		php-command-script-mk1 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

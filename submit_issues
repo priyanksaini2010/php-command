@@ -1,0 +1,16 @@
+#!/bin/bash
+# This a Shell Script For creating new issues on a defined repository
+#
+# @author Priyank Saini <priyanksaini2010@gmail.com>
+
+
+if [ "$1" = "-help" ]
+then
+    exec php -q help.php;
+fi
+
+if [ "$1" != "-help" ]
+then
+    exec php -q index.php username $2 password $4 domail $5 title "$6" content "$7"
+fi
+#exec php -q index.php username $2 password $4 domail $5 title "$6" content "$7"
